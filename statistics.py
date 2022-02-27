@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 from typing import List
 import math
 
-from medhagelli.linear_algebra import sum_of_squares, dot
+from medhagelli.linear_algebra import sum_of_squares
+from medhagelli.linear_algebra import dot
 
 # Data
 num_friends = [100.0,49,41,40,25,21,21,19,19,18,18,16,
@@ -35,8 +36,8 @@ daily_minutes = [1,68.77,51.25,52.08,38.36,44.54,57.13,51.4,41.42,31.22,
     30.93,15.03,21.67,31.09,33.29,22.61,26.89,23.48,8.38,27.81,32.35,23.84]
 
 daily_hours = [dm / 60 for dm in daily_minutes]
-friend_counts = Counter(num_friends)
 
+friend_counts = Counter(num_friends)
 xs = range(101)                         # largest value is 100
 ys = [friend_counts[x] for x in xs]     # height is just # of friends
 plt.bar(xs, ys)
@@ -45,6 +46,7 @@ plt.title("Histogram of Friend Counts")
 plt.xlabel("# of friends")
 plt.ylabel("# of people")
 # plt.show()
+num_points = len(num_friends)
 
 # FUNCTIONS
 #     correlation(xs: List[float], ys: List[float]) -> float
