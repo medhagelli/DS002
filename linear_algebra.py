@@ -84,6 +84,23 @@ def distance(v: Vector, w: Vector) -> float:
 def distance(v: Vector, w: Vector) -> float:  # type: ignore
     return magnitude(subtract(v, w))
 
+
+
+Matrix = List[List[float]]
+A = [[1, 2, 3],
+     [4, 5, 6]]
+
+B = [[1, 2],
+     [3, 4],
+     [5, 6]]
+
+from typing import Tuple
+def shape(A: Matrix) -> Tuple[int, int]:
+  num_rows = len(A)
+  num_cols = len(A[0]) if A else 0
+  return num_rows
+  return num_cols
+
 # Add these tests to the end of your linear_algebra.py file
 # commit and push the update to GitHub
 
